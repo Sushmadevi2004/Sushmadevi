@@ -1,0 +1,18 @@
+import os
+os.chdir('e:\\sushmadevi')
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+df=pd.read_csv('e:\\sushmadevi\\house.csv')
+# print(df.head())
+plt.scatter(df.sq_feet,df.budget,color='red',marker='+')
+model=LinearRegression()
+model.fit(df[['sq_feet']],df.budget)
+pred=model.predict([[40]])
+print(pred)
+print(model.coef_)
+print(model.intercept_)
+
+#for example:
+#y=mx+c
+#here x=10,y=1(10),c=10,m=1+10=20
